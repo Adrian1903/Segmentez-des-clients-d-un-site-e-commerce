@@ -197,3 +197,11 @@ def evaluate_estimators(X_train, X_test, y_train, y_test, estimators, cv=5, scor
     export_png_table(round(results,4), filename='img_results_' + target_name + '.png')
 
     return None
+
+def get_date_int(df, column):
+    year = df[column].dt.year
+    month = df[column].dt.month
+    day = df[column].dt.day
+    return year, month, day
+
+def get_month(x): return dt.datetime(x.year, x.month, 1)
