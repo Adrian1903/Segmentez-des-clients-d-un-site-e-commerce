@@ -205,3 +205,5 @@ def get_date_int(df, column):
     return year, month, day
 
 def get_month(x): return dt.datetime(x.year, x.month, 1)
+
+def join_rfm(x): return str(x['R']) + str(x['F']) + str(x['M'])
