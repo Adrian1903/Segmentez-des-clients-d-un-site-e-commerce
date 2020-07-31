@@ -7,6 +7,7 @@ import six
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import mean_squared_error as MSE
 from sklearn.metrics import r2_score
+import datetime as dt
 
 
 def display_circles(pcs, n_comp, pca, axis_ranks, labels=None, label_rotation=0, lims=None):
