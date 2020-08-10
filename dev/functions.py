@@ -229,3 +229,6 @@ def sortedgroupedbar(ax, x, y, groupby, data=None, legend_anchor=None, width=0.8
     ax.set_xticklabels(u)
     ax.set_xlabel(x)
     ax.set_ylabel(y)
+
+
+def get_next_event(x): return x['source'].shift(-1)
