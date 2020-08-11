@@ -232,3 +232,25 @@ def sortedgroupedbar(ax, x, y, groupby, data=None, legend_anchor=None, width=0.8
 
 
 def get_next_event(x): return x['source'].shift(-1)
+
+def affect_cluster_name(df, cluster, dict):
+    """Affecte le nom des clusters à un dataframe donné via un dictionnaire établi préalablement. 
+    Supprime la variable intermédiaire cluster.
+
+    Args:
+        df (dataframe): Dataframe à transformer
+        cluster (array): Liste des clusters ligne à ligne avec le df
+        dict (dict): Nom des clusters
+
+    Returns:
+        dataframe: Retourne le dataframe avec les cluster correspondant aux observations
+    """    
+    df['cluster'] = cluster
+    df['cluster_name'] = np.nan
+
+    for i, n in dict.items():
+        df['cluster_name'][df.cluster == n] = i
+
+    df.drop(columns='cluster', inplace=True)
+
+    return df
